@@ -1,47 +1,32 @@
-package Task2A;
-//1.4 Define a base class person with attributes name and age
-//        create a subclass Employee that inherits from Person and adds attributes like empolyeeID and salary
-//        Use the super keyword to initialize the person attributes in the Employee constructor
+package Task2;
+//1.1) create a class person with properties (name and age) with following features.
+//        a) Default age should be 18
+//b) A person object can be initialized with name and age
+//c) method to display name and age of person
 
+//person class
 public class Person {
 
-
     private String name;
-    private int age;
+    //Setting defalut age as 18
+   final private int age=18;
 
-    //Parameter constructor
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
+    //constructor to initialize the object with parameters
+    public Person(String name,int age)
+    {
+        this.name=name;
+    }
+    //Method to display person name and age
+    public void displayPersonInfo()
+    {
+        System.out.println("Person name is:"+name+"\n"+"Person age is:"+age);
     }
 
-    //Getter method to return person name
-    public String getName() {
-        return name;
-    }
-}
-
-//employee class inherits person class
-class Employee extends Person
-{
-    private int employeeID;
-    private double salary;
-
-    //parameterized constructor with super keyword to call parent constructor
-    public Employee(String name, int age, int employeeID, double salary) {
-        super(name, age);
-        this.employeeID = employeeID;
-        this.salary = salary;
-    }
-    //Getter to return employee id
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    //Main method to check the employee class inherits person class
+    //Main method to access person class method to display person details
     public static void main(String[] args)
     {
-        Employee emp=new Employee("Vicky",20,988893,900700);
-        System.out.println("Employee name is: "+emp.getName()+"\n"+"Employee ID is: "+emp.getEmployeeID());
+        Person person=new Person("vicky",20);
+        person.displayPersonInfo();
+
     }
-    }
+}
